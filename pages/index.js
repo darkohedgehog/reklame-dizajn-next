@@ -66,6 +66,7 @@ const Home = () => {
             <Avatar />
           </motion.div>
         </div>
+        
       </div>
     );
   };

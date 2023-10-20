@@ -2,6 +2,10 @@ import {Sora} from "next/font/google";
 import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
+import Footer from "./Footer";
+
+
+
 
 
 
@@ -16,9 +20,10 @@ const Layout = ({children}) => {
       <div className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}>
         <TopLeftImg />
         <Nav />
-        <Header />
-        {children}
-      </div>
+        <Header />                
+       {children}  
+       <Footer />            
+      </div>      
     );
   };
   

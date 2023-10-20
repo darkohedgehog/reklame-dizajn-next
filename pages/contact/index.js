@@ -1,9 +1,13 @@
 import Circles from "/components/Circles";
 import {BsArrowRight} from "react-icons/bs";
+import {SlLocationPin} from "react-icons/sl";
+import {FaMobileAlt} from "react-icons/fa";
+import {AiOutlineMail} from "react-icons/ai";
 import { motion } from "framer-motion";
 import {fadeIn} from "../../variants";
 import axios from "axios";
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -83,13 +87,9 @@ const Contact = () => {
     }
   };
 
-
-
-
-
     return (
       <div className="h-full bg-primary/30">
-        <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+        <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center">
           {/* text & form */}
           <div className="flex flex-col w-full max-w-[700px]">
             {/* text */}
@@ -164,10 +164,44 @@ const Contact = () => {
               </button>
               <div className="text-accent">{successMsg}</div>
             </motion.form>
+            <div className="flex-1 flex flex-col mx-auto container gap-6 w-full justify-center items-center">
+            <div className="flex flex-1 flex-row-reverse items-center justify-center gap-4 group hover:text-accent cursor-pointer transition-all duration-300 mx-auto"> 
+            <span>nino05dizajn@gmail.com</span>
+            <Link 
+            href="mailto:nino05dizajn@gmail.com"
+            aria-label="Naš email"
+            title="Naš email"
+            ><AiOutlineMail />
+            </Link>           
+            </div>
+            <div className="flex-1 flex flex-row-reverse items-center justify-center gap-4 group hover:text-accent cursor-pointer transition-all duration-300 mx-auto">
+              <span>+381641706370</span>
+              <Link
+               href="tel:+381641706370"
+               aria-label="Naš telefon"
+               title="Naš telefon"
+              ><FaMobileAlt />
+              </Link>              
+            </div>
+            <div className="flex-1 flex flex-row-reverse items-center justify-center group hover:text-accent cursor-pointer transition-all duration-300 mx-auto">
+              <h3 className="flex flex-1 gap-2">Žikice Damnjanovića 15
+              <span> Smederevska Palanka</span>
+              </h3>              
+              <Link 
+              href="https://www.google.com/maps/place/%C5%BDikice+Damnjanovi%C4%87a+15,+Smederevska+Palanka,+Srbija/@44.3705003,20.9535582,19z/data=!3m1!4b1!4m6!3m5!1s0x4750cf04b55f7a3f:0x772beb770fe5759a!8m2!3d44.3704993!4d20.9542019!16s%2Fg%2F11syyv_18j?authuser=0&entry=ttu"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Naša adresa"
+              title="Naša adresa"
+              className="flex gap-4 mx-4">
+              <SlLocationPin />
+              </Link>
+            </div>
+          </div>
           </div>
         </div>
         <Circles />
-      </div>
+        </div>
     );
   };
   
