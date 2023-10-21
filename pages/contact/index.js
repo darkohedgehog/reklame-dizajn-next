@@ -88,7 +88,7 @@ const Contact = () => {
   };
 
     return (
-      <div className="h-full bg-primary/30">
+      <div className="h-full bg-primary/30 overflow-y-auto">
         <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center">
           {/* text & form */}
           <div className="flex flex-col w-full max-w-[700px]">
@@ -159,12 +159,17 @@ const Contact = () => {
                   ? "border-red-600 focus-visible:border-red-600"
                   : "border-zinc-600 focus-visible:border-designColor"
               } btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group`}>
-                <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">Let`s talk</span>
+                <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">Povežimo se</span>
                 <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
               </button>
               <div className="text-accent">{successMsg}</div>
             </motion.form>
-            <div className="flex-1 flex flex-col mx-auto container gap-6 w-full justify-center items-center">
+          <motion.div 
+          variants={fadeIn('up', 0.4)}
+          initial='hidden'
+          animate='show'
+          exit='hidden'
+          className="flex-1 flex flex-col mx-auto container gap-6 w-full justify-center items-center">
             <div className="flex flex-1 flex-row-reverse items-center justify-center gap-4 group hover:text-accent cursor-pointer transition-all duration-300 mx-auto"> 
             <span>nino05dizajn@gmail.com</span>
             <Link 
@@ -185,7 +190,7 @@ const Contact = () => {
             </div>
             <div className="flex-1 flex flex-row-reverse items-center justify-center group hover:text-accent cursor-pointer transition-all duration-300 mx-auto">
               <h3 className="flex flex-1 gap-2">Žikice Damnjanovića 15
-              <span> Smederevska Palanka</span>
+              <span className="flex gap-2"> Smederevska Palanka</span>
               </h3>              
               <Link 
               href="https://www.google.com/maps/place/%C5%BDikice+Damnjanovi%C4%87a+15,+Smederevska+Palanka,+Srbija/@44.3705003,20.9535582,19z/data=!3m1!4b1!4m6!3m5!1s0x4750cf04b55f7a3f:0x772beb770fe5759a!8m2!3d44.3704993!4d20.9542019!16s%2Fg%2F11syyv_18j?authuser=0&entry=ttu"
@@ -197,7 +202,7 @@ const Contact = () => {
               <SlLocationPin />
               </Link>
             </div>
-          </div>
+          </motion.div>
           </div>
         </div>
         <Circles />

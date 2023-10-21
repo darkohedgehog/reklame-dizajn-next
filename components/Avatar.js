@@ -6,7 +6,7 @@ const Avatar = () => {
       <Image 
       src={'/avatar.png'} 
       width={737} 
-      height={678} 
+      height={680} 
       alt="" 
       className="translate-z-0 w-full h-full" />
     </div>;
